@@ -17,5 +17,14 @@ Visit [Jar-Luc](https://jar-luc.herokuapp.com/), where you can use the form to p
 ```
   curl -X POST -H 'Content-Type: application/json' -d '{ "description": "Forgot to migrate after creating a new model", "author": "Aristotle" }' https://jar-luc.herokuapp.com/api/v1/palmies
 ```
-
+Or, with this handy-dandy function in your ~/.aliases file
+```
+facepalm(){
+        curl -X POST -H 'Content-Type: application/json' -d '{ "description": "'"$1"'", "author": "'"$2"'" }' https://jar-luc.herokuapp.com/api/v1/palmies
+} 
+```
+And use it like so:
+```
+facepalm "your description content" "your name/pseudonym"
+```
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon](https://www.lewagon.com) team.
