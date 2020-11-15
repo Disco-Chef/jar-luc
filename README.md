@@ -14,8 +14,8 @@ Inspired by the concept of a Swear-Jar, here is the Facepalm-Jar, or rather, in 
 Visit [Jar-Luc](https://jar-luc.herokuapp.com/), where you can use the form to post your *Palmy*, as we have come to name them, with a description of what made you slap yer face, and, if you are so inclined, your identity/pseudonym.
 
 #### Via curl:
-
+```
   curl -X POST -H 'Content-Type: application/json' -d '{ "description": "Forgot to migrate after creating a new model", "author": "Aristotle" }' https://jar-luc.herokuapp.com/api/v1/palmies
-
+```
 
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon](https://www.lewagon.com) team.
