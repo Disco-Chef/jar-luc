@@ -1,0 +1,2 @@
+class Palmy < ApplicationRecord
+end
