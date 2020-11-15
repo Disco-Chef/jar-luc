@@ -11,14 +11,14 @@
 <br>
 
 <ul>
-  <li class="card">
-    <% @palmies.reverse.each do |palmy| %>
+  <% @palmies.reverse.each do |palmy| %>
+    <li class="card">
       <h2 class="content">
         <%= palmy.description %> <%= reactions.sample %>
       </h2>
       <h3 class="author">
         <strong>--<%= palmy.author %></strong>
       </h3>
-    <% end %>
-  </li>
+    </li>
+  <% end %>
 </ul>
