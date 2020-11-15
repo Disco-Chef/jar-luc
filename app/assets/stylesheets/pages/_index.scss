@@ -1,3 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
-@import "../palmies/index"
+@import "../palmies/index";
+
+.facepalm-banner {
+  width: 100vw;
+  height: 500px;
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ftrekcore.com%2Fblog%2Fwp-content%2Fuploads%2F2018%2F04%2Ffacepalm-deja-q.jpg");
+  background-position: center;
+  background-size: cover;
+}

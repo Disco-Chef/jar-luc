@@ -1,3 +1,5 @@
+
+
 <div id="palmy-form">
   <%= simple_form_for @palmy do |f| %>
     <%= f.input :description %>
@@ -5,13 +7,14 @@
     <%= f.button :submit, class: 'btn btn-primary' %>
   <% end %>
 </div>
+
 <br>
 
 <ul>
   <li class="card">
     <% @palmies.each do |palmy| %>
       <h2 class="content">
-        <%= palmy.description %>
+        <%= palmy.description %> 🤦‍♂️
       </h2>
       <h3 class="author">
         <strong>--<%= palmy.author %></strong>
