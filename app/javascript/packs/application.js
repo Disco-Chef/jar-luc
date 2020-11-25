@@ -48,7 +48,6 @@ let palmyId;
 
 // ======= event listener on emojis in modal =====
 const reactions = document.querySelectorAll(".reaction");
-console.log(reactions);
 
 const sendReaction = (event) => {
   // console.log(event.parent);
