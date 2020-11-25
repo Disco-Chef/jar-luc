@@ -47,7 +47,7 @@
       Reactions: <% palmy.reactions.map { |reaction| reaction.emoji}.uniq.each do |emoji| %>
         <%= emoji %> x <%= Reaction.where(palmy_id: palmy.id, emoji: emoji).count %>
       <% end %>
-      <button type="button" class="btn btn-primary container" data-toggle="modal" data-target="#reactionModalLong">
+      <button type="button" class="btn btn-primary reaction-button" data-palmy-id="<%= palmy.id %>" data-toggle="modal" data-target="#reactionModalLong">
         React!
       </button>
     </li>

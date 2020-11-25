@@ -32,19 +32,21 @@ document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+// ======= event listener on emojis in modal =====
 const reactions = document.querySelectorAll(".reaction");
-console.log(reactions)
+console.log(reactions);
+
 const sendReaction = (event) => {
-  console.log(event.parent);
-  // fetch("http://localhost:3000/api/v1/reactions", {
-  //   method: "POST",
-  //   headers: {'Content-Type': 'application/json'},
-  //   body: JSON.stringify({reaction: { emoji: event.currentTarget.innerText, palmy_id: 2 }})
-  // })
-  //   .then(response => response.json())
-  //   .then((data) => {
-  //     console.log(data);
-  //   });
+  // console.log(event.parent);
+  fetch("http://localhost:3000/api/v1/reactions", {
+    method: "POST",
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({reaction: { emoji: event.currentTarget.innerText, palmy_id: 2 }})
+  })
+    .then(response => response.json())
+    .then((data) => {
+      console.log(data);
+    });
 }
 
 const listenerToAllEmojis = (element) => {
@@ -54,5 +56,17 @@ const listenerToAllEmojis = (element) => {
 
 reactions.forEach(listenerToAllEmojis);
 
+// ======== event listener on reactin buttons (to get palmy_id) ================
+
+const reactionButtons = document.querySelectorAll(".reaction-button");
+
+
+const createReactionObject = (element) => {
+  let reaction = {palmy_id: parseInt(element.dataset.palmyId, 10), emoji: null}
+  console.log(reaction)
+}
+
+
+reactionButtons.forEach(createReactionObject)
 
 
