@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_15_121035) do
+ActiveRecord::Schema.define(version: 2020_11_25_112137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,4 +22,13 @@ ActiveRecord::Schema.define(version: 2020_11_15_121035) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "reactions", force: :cascade do |t|
+    t.string "emoji"
+    t.bigint "palmy_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["palmy_id"], name: "index_reactions_on_palmy_id"
+  end
+
+  add_foreign_key "reactions", "palmies"
 end

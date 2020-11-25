@@ -1,5 +1,29 @@
 <% reactions = ['🤦‍♂️', '😅', '😬', '¯\_(ツ)_/¯', '🤷‍♂️', '(╯°□°）╯︵ ┻━┻', '🙄', '🙈', '😩', '😫', '😐', '😑', '🤷‍♀️', '🤦‍♀️'] %>
 
+<div class="modal fade" id="reactionModalLong" tabindex="-1" role="dialog" aria-labelledby="reactionModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reactionModalLongTitle">Click on an Emoji!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="ractions container d-flex flex-wrap">
+          <% Emoji.all.first(250).each do |emoji| %>
+            <p class="reaction px-1"><%= emoji.raw %></p>
+          <% end %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
 <div id="palmy-form">
   <%= simple_form_for @palmy do |f| %>
     <%= f.input :description %>
@@ -19,6 +43,13 @@
       <h3 class="author">
         <strong>--<%= palmy.author %></strong>
       </h3>
+      <!-- Need something here.. map to emojis? -->
+      Reactions: <% palmy.reactions.map { |reaction| reaction.emoji}.uniq.each do |emoji| %>
+        <%= emoji %> x <%= Reaction.where(palmy_id: palmy.id, emoji: emoji).count %>
+      <% end %>
+      <button type="button" class="btn btn-primary container" data-toggle="modal" data-target="#reactionModalLong">
+        React!
+      </button>
     </li>
   <% end %>
 </ul>

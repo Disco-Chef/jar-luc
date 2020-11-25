@@ -14,11 +14,11 @@
   <body>
 
 <!-- Modal -->
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal fade" id="hintModalLong" tabindex="-1" role="dialog" aria-labelledby="hintModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Jar-Luc, the facepalm-jar!</h5>
+            <h5 class="modal-title" id="hintModalLongTitle">Jar-Luc, the facepalm-jar!</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -44,7 +44,7 @@
             <code>curl -X POST -H 'Content-Type: application/json' -d '{ "description": "Forgot to migrate after creating a new model", "author": "Aristotle" }' https://jar-luc.herokuapp.com/api/v1/palmies</code>
             <br>
             <br>
-            <h6>Or, with this handy-dandy function in your ~/.aliases file</h6>
+            <h5>Or, with this handy-dandy function in your ~/.aliases file</h5>
             <code>
               facepalm(){
                 curl -X POST -H 'Content-Type: application/json' -d '{ "description": "'"$1"'", "author": "'"$2"'" }' https://jar-luc.herokuapp.com/api/v1/palmies
@@ -66,7 +66,7 @@
     <div class="facepalm-banner container banner"></div>
     <br>
     <div class="container">
-      <button type="button" class="btn btn-primary container" data-toggle="modal" data-target="#exampleModalLong">
+      <button type="button" class="btn btn-primary container" data-toggle="modal" data-target="#hintModalLong">
         What am I looking at?
       </button>
       <%= yield %>
