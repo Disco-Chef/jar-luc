@@ -3,7 +3,7 @@ class Api::V1::ReactionsController < Api::V1::BaseController
   def create
     @reaction = Reaction.new(reaction_params)
     if @reaction.save
-      render json: { message: "fetch() OK! My my, aren't you clever!" }
+      render json: { message: "fetch() OK! My my... aren't you clever" }
     else
       render_error
     end

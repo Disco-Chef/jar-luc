@@ -13,6 +13,7 @@
         <div class="ractions container d-flex flex-wrap">
           <% Emoji.all.first(250).each do |emoji| %>
             <p class="reaction px-1"><%= emoji.raw %></p>
+
           <% end %>
         </div>
       </div>
@@ -43,10 +44,11 @@
       <h3 class="author">
         <strong>--<%= palmy.author %></strong>
       </h3>
-      <!-- Need something here.. map to emojis? -->
-      Reactions: <% palmy.reactions.map { |reaction| reaction.emoji}.uniq.each do |emoji| %>
-        <%= emoji %> x <%= Reaction.where(palmy_id: palmy.id, emoji: emoji).count %>
-      <% end %>
+      <div class="container">
+        <% palmy.reactions.map { |reaction| reaction.emoji}.uniq.each do |emoji| %>
+          <%= emoji %> x <%= Reaction.where(palmy_id: palmy.id, emoji: emoji).count %>
+        <% end %>
+      </div>
       <button type="button" class="btn btn-primary reaction-button" data-palmy-id="<%= palmy.id %>" data-toggle="modal" data-target="#reactionModalLong">
         React!
       </button>
