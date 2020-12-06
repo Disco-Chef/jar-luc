@@ -8,9 +8,7 @@ class Api::V1::PalmiesController < Api::V1::BaseController
     if @palmy.save
       render json: {
         status: :created,
-        message: "All good, Facepalm succesfully created.
-        Thank you for your contribution!
-        One of us! One of us! One of us!"
+        message: "Facepalm succesfully created.\nThank you for your contribution!\nOne of us! One of us! One of us!"
       }
     else
       render_error
