@@ -6,7 +6,12 @@ class Api::V1::PalmiesController < Api::V1::BaseController
   def create
     @palmy = Palmy.new(palmy_params)
     if @palmy.save
-      render :index, status: :created
+      render json: {
+        status: :created,
+        message: "All good, Facepalm succesfully created.
+        Thank you for your contribution!
+        One of us! One of us! One of us!"
+      }
     else
       render_error
     end

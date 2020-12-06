@@ -9,12 +9,7 @@ class PalmiesController < ApplicationController
     if @palmy.save
       redirect_to palmies_path
     else
-      render json: {
-        status: :created,
-        message: "All good, Facepalm succesfully created.
-        Thank you for your contribution!
-        One of us! One of us! One of us!"
-      }
+      render 'index'
     end
   end
 
