@@ -41,18 +41,24 @@
             <p>Here, at <a href="https://jar-luc.herokuapp.com">Jar-Luc</a>, you can use the form to post your Palmy, as we have come to name them, with a description of what made you slap yer face, and, if you are so inclined, your identity/pseudonym.</p>
             <br>
             <h5>Via curl:</h5>
-            <code>curl -X POST -H 'Content-Type: application/json' -d '{ "description": "Forgot to migrate after creating a new model", "author": "Aristotle" }' https://jar-luc.herokuapp.com/api/v1/palmies</code>
+<pre>curl -X POST -H 'Content-Type: application/json' -d '{
+  "description": "Forgot to migrate after creating a new model",
+  "author": "Aristotle"
+}' https://jar-luc.herokuapp.com/api/v1/palmies</pre>
             <br>
             <br>
             <h5>Or, with this handy-dandy function in your ~/.aliases file</h5>
-            <pre>facepalm(){
-if [ "$1" ] && [  "$2" ]; then
-  curl -X POST -H 'Content-Type: application/json' -d '{ "description": "'"$1"'", "author": "'"2"'" }' https://jar-luc.herokuapp.com/api/v1/palmies;
-else
-  echo "One or both of author/description are empty 😅"
-fi
-}
-            </pre>
+<pre>facepalm(){
+  if [ "$1" ] && [  "$2" ]; then
+    curl -X POST -H 'Content-Type: application/json' -d '{
+      "description": "'"$1"'",
+      "author": "'"2"'"
+    }' 
+    https://jar-luc.herokuapp.com/api/v1/palmies;
+  else
+    echo "One or both of author/description are empty 😅"
+  fi
+}</pre>
             <br>
             <br>
             <h6>And use it like so:</h6>
