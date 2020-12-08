@@ -45,14 +45,14 @@
             <br>
             <br>
             <h5>Or, with this handy-dandy function in your ~/.aliases file</h5>
-	    <code>
-		facepalm(){
-			if [ "$1" ] && [  "$2" ]; then
-			curl -X POST -H 'Content-Type: application/json' -d '{ "description": "'"$1"'", "author": "'"2"'" }' https://jar-luc.herokuapp.com/api/v1/palmies
-			else
-			echo "one or several of the required fields are empty"
-			fi
-		}
+            <code>
+              facepalm(){
+                if [ "$1" ] && [  "$2" ]; then
+                  curl -X POST -H 'Content-Type: application/json' -d '{ "description": "'"$1"'", "author": "'"2"'" }' https://jar-luc.herokuapp.com/api/v1/palmies
+                else
+                  echo "One or both of author/description are empty 😅"
+                fi
+              }
             </code>
             <br>
             <br>
