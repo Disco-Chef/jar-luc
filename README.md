@@ -15,9 +15,9 @@ Visit [Jar-Luc](https://jar-luc.herokuapp.com/), where you can use the form to p
 
 #### Via curl:
 ```
-  curl -X POST -H 'Content-Type: application/json' -d '{ "description": "Forgot to migrate after creating a new model", "author": "Aristotle" }' https://jar-luc.herokuapp.com/api/v1/palmies
+curl -X POST -H 'Content-Type: application/json' -d '{ "description": "Forgot to migrate after creating a new model", "author": "Aristotle" }' https://jar-luc.herokuapp.com/api/v1/palmies
 ```
-Or, with this handy-dandy function in your ~/.aliases file
+#### Or, with this handy-dandy function in your ~/.aliases file
 ```
 facepalm(){
         curl -X POST -H 'Content-Type: application/json' -d '{ "description": "'"$1"'", "author": "'"$2"'" }' https://jar-luc.herokuapp.com/api/v1/palmies
