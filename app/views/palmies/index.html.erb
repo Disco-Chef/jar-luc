@@ -36,7 +36,7 @@
 <br>
 
 <ul style='padding-left: 0px;'>
-  <% @palmies.reverse.each do |palmy| %>
+  <% @palmies.sort_by(&:created_at).reverse.each do |palmy| %>
     <li class="card">
       <h2 class="content">
         <%= palmy.description %> <%= reactions.sample %>
