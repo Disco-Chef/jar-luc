@@ -33,18 +33,7 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
 });
 
-
-
-
-
 let palmyId;
-
-
-
-
-
-
-
 
 // ======= event listener on emojis in modal =====
 const reactions = document.querySelectorAll(".reaction");

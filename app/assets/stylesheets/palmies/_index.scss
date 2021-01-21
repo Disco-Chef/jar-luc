@@ -1,6 +1,18 @@
 .author {
-  text-align: right;
+  align-self: flex-end;
 }
+
+.card {
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+}
+
+.reaction-button {
+  align-self: flex-end;
+}
+
 code {
   display: block;
   white-space: pre-wrap   

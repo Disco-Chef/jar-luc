@@ -35,7 +35,7 @@
 
 <br>
 
-<ul style='padding-left: 0px;'>
+<div>
   <% @palmies.sort_by(&:created_at).reverse.each do |palmy| %>
     <li class="card">
       <h2 class="content">
@@ -54,4 +54,4 @@
       </button>
     </li>
   <% end %>
-</ul>
+</div>
