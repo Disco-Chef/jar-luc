@@ -39,7 +39,6 @@ let palmyId;
 const reactions = document.querySelectorAll(".reaction");
 
 const sendReaction = (event) => {
-  // console.log(event.parent);
   fetch("https://jar-luc.herokuapp.com/api/v1/reactions", {
     method: "POST",
     headers: {'Content-Type': 'application/json'},
@@ -47,7 +46,6 @@ const sendReaction = (event) => {
   })
     .then(response => response.json())
     .then((data) => {
-      // console.log(data);
       location.reload();
     });
 }
@@ -59,10 +57,9 @@ const listenerToAllEmojis = (element) => {
 
 reactions.forEach(listenerToAllEmojis);
 
-// // ======== event listener on reactin buttons (to get palmy_id) ================
+// // ======== event listener on reaction buttons (to get palmy_id) ================
 
 const reactionButtons = document.querySelectorAll(".reaction-button");
-
 
 const setPalmyId = (button) => {
   button.addEventListener('click', (event) => {
