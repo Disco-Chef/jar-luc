@@ -52,7 +52,7 @@
   if [ "$1" ] && [  "$2" ]; then
     curl -X POST -H 'Content-Type: application/json' -d '{
       "description": "'"$1"'",
-      "author": "'"2"'"
+      "author": "'"$2"'"
     }' 
     https://jar-luc.herokuapp.com/api/v1/palmies;
   else
