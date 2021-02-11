@@ -39,7 +39,9 @@
   <% @palmies.sort_by(&:created_at).reverse.each do |palmy| %>
     <li class="card">
       <h2 class="content">
-        <%= palmy.description %> <%= reactions.sample %>
+        <%= palmy.description %>
+        <br>
+        <%= reactions.sample %>
       </h2>
       <h3 class="author">
         <strong>--<%= palmy.author %></strong>
