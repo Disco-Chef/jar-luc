@@ -42,12 +42,11 @@ const sendReaction = (event) => {
   fetch("https://jar-luc.herokuapp.com/api/v1/reactions", {
     method: "POST",
     headers: { 'Content-Type': 'application/json'},
-    mode: 'no-cors',
     body: JSON.stringify({reaction: { emoji: event.currentTarget.innerText, palmy_id: palmyId }})
   })
     .then(response => response.json())
     .then((data) => {
-      location.reload();
+      // location.reload();
     });
 }
 

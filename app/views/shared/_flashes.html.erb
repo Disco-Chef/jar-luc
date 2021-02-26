@@ -1,0 +1,7 @@
+<div class="text-center">
+  <% error_messages.each do |error_field, errors|%>
+      <% errors.each do |error_message| %>
+          <div class="my-2"><%= error_field.capitalize %> <%= error_message %></div>
+      <% end %>
+  <% end %>
+</div>

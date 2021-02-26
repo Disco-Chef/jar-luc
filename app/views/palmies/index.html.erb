@@ -24,7 +24,9 @@
   </div>
 </div>
 <br>
-
+<% if params[:errors] %>
+  <%= render 'shared/flashes', error_messages: params[:errors] %>
+<% end %>
 <div id="palmy-form">
   <%= simple_form_for @palmy do |f| %>
     <%= f.input :description %>
@@ -57,3 +59,4 @@
     </li>
   <% end %>
 </div>
+

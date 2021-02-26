@@ -6,11 +6,9 @@ class PalmiesController < ApplicationController
 
   def create
     @palmy = Palmy.new(palmy_params)
-    if @palmy.save
-      redirect_to palmies_path
-    else
-      render 'index'
-    end
+    @palmy.save
+    @errors_hash = @palmy.errors.messages
+    redirect_to root_path(errors: @errors_hash)
   end
 
   private
