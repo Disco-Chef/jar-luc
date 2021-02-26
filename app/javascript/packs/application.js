@@ -46,7 +46,7 @@ const sendReaction = (event) => {
   })
     .then(response => response.json())
     .then((data) => {
-      // location.reload();
+      location.reload();
     });
 }
 
