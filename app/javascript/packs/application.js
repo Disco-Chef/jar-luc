@@ -35,8 +35,8 @@ document.addEventListener("turbolinks:load", () => {
 
 let palmyId;
 
-// ======= event listener on emojis in modal =====
 const reactions = document.querySelectorAll(".reaction");
+const reactionButtons = document.querySelectorAll(".reaction-button");
 
 const sendReaction = (event) => {
   fetch("https://jar-luc.herokuapp.com/api/v1/reactions", {
@@ -54,19 +54,13 @@ const listenerToAllEmojis = (element) => {
   element.addEventListener('click', sendReaction);
 }
 
-
-reactions.forEach(listenerToAllEmojis);
-
-// // ======== event listener on reaction buttons (to get palmy_id) ================
-
-const reactionButtons = document.querySelectorAll(".reaction-button");
-
 const setPalmyId = (button) => {
   button.addEventListener('click', (event) => {
     palmyId = event.currentTarget.dataset.palmyId
   })
 }
 
+reactions.forEach(listenerToAllEmojis);
 
 reactionButtons.forEach(setPalmyId);
 
