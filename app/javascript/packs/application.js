@@ -39,7 +39,7 @@ const reactions = document.querySelectorAll(".reaction");
 const reactionButtons = document.querySelectorAll(".reaction-button");
 
 const sendReaction = (event) => {
-  fetch("https://jar-luc.herokuapp.com/api/v1/reactions", {
+  fetch("http://localhost:3000/api/v1/reactions", {
     method: "POST",
     headers: { 'Content-Type': 'application/json'},
     body: JSON.stringify({reaction: { emoji: event.currentTarget.innerText, palmy_id: palmyId }})
