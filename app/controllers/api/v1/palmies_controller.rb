@@ -5,6 +5,7 @@ class Api::V1::PalmiesController < Api::V1::BaseController
 
   def create
     @palmy = Palmy.new(palmy_params)
+    raise
     if @palmy.save
       render json: {
         status: :created,
