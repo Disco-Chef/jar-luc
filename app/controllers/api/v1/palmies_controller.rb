@@ -4,8 +4,6 @@ class Api::V1::PalmiesController < Api::V1::BaseController
   end
 
   def create
-    p params
-    p palmy_params
     @palmy = Palmy.new(palmy_params)
     if @palmy.save
       render json: {
