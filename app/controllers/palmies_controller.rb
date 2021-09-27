@@ -1,5 +1,6 @@
 class PalmiesController < ApplicationController
   def index
+    @reactions = ['🤦‍♂️', '😅', '😬', '¯\_(ツ)_/¯', '🤷‍♂️', '(╯°□°）╯︵ ┻━┻', '🙄', '🙈', '😩', '😫', '😐', '😑', '🤷‍♀️', '🤦‍♀️']
     @palmies = Palmy.all
     @palmy = Palmy.new
   end

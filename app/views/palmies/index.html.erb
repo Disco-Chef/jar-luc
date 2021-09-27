@@ -1,5 +1,3 @@
-<% reactions = ['🤦‍♂️', '😅', '😬', '¯\_(ツ)_/¯', '🤷‍♂️', '(╯°□°）╯︵ ┻━┻', '🙄', '🙈', '😩', '😫', '😐', '😑', '🤷‍♀️', '🤦‍♀️'] %>
-
 <div class="modal fade" id="reactionModalLong" tabindex="-1" role="dialog" aria-labelledby="reactionModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -43,7 +41,7 @@
       <h2 class="content">
         <%= palmy.description %>
         <br>
-        <%= reactions.sample %>
+        <%= @reactions.sample %>
       </h2>
       <h3 class="author">
         <strong>--<%= palmy.author %></strong>
@@ -59,4 +57,3 @@
     </li>
   <% end %>
 </div>
-
